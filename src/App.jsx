@@ -5,7 +5,7 @@ import FoodGallery from "./components/FoodGallery";
 export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[var(--azul)] via-white to-[var(--rojo)]">
-      {/* Cabecera con bandera animada */}
+
       <header className="py-8">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex items-center justify-center gap-4">

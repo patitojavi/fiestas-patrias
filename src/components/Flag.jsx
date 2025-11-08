@@ -1,8 +1,8 @@
 
 export default function Flag({ mirrored = false, size = 56 }) {
-  // tamaño configurable
-  const w = size * 1.6; // ancho proporcional
-  const h = size;       // alto
+
+  const w = size * 1.6;
+  const h = size;       
 
   return (
     <div
@@ -14,17 +14,17 @@ export default function Flag({ mirrored = false, size = 56 }) {
       role="img"
       title="Bandera de Chile"
     >
-      {/* contenedor con borde redondo */}
+
       <div className="w-full h-full rounded-md overflow-hidden shadow-md">
-        {/* franja superior blanca */}
+
         <div className="w-full h-1/2 bg-white relative">
-          {/* cuadrado azul con estrella */}
+
           <div className="absolute left-0 top-0 h-full aspect-square bg-[var(--azul)] grid place-items-center">
             {/* estrella simple */}
             <span className="text-white text-xl select-none">★</span>
           </div>
         </div>
-        {/* franja inferior roja */}
+
         <div className="w-full h-1/2 bg-[var(--rojo)]" />
       </div>
     </div>
