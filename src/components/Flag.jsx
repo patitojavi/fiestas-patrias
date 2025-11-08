@@ -1,4 +1,4 @@
-/* Bandera minimalista con animación de ondeo */
+
 export default function Flag({ mirrored = false, size = 56 }) {
   // tamaño configurable
   const w = size * 1.6; // ancho proporcional

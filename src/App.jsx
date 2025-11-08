@@ -18,7 +18,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Contenido principal */}
+
       <main className="max-w-5xl mx-auto px-4 pb-16">
         <section className="festive-border bg-white/90 backdrop-blur p-6 md:p-10 card-hover">
           <Countdown />
@@ -31,14 +31,14 @@ export default function App() {
           <FoodGallery />
         </section>
 
-        {/* Franja inferior decorativa */}
+
         <section
           aria-hidden="true"
           className="mt-12 h-3 w-full rounded-full bg-gradient-to-r from-[var(--rojo)] via-white to-[var(--azul)]"
         />
       </main>
 
-      {/* Pie simple */}
+
       <footer className=" py-6 mt-auto">
         <div className="max-w-5xl mx-auto px-4 text-center text-sm text-blue-900">
           © 2024 Celebrando Fiestas Patrias. Todos los derechos reservados.
