@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fondo con gradiente patriota sutil (rojo-azul) */
+:root {
+  --rojo: #e11d48;   /* rojo tailwind-ish */
+  --azul: #052e9c;   /* azul tailwind-ish */
+}
+
+/* Bandera ondeando (para el componente Flag) */
+@keyframes wave {
+  0%   { transform: skewX(0deg) translateY(0); }
+  50%  { transform: skewX(-2deg) translateY(-1px); }
+  100% { transform: skewX(0deg) translateY(0); }
+}
+.animate-wave {
+  animation: wave 2.4s ease-in-out infinite;
+}
+
+/* Flotar suave (para imágenes de comida) */
+@keyframes floaty {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+/* Brillito sutil al pasar el mouse */
+.card-hover {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Borde festivo (rojo/blanco/azul) */
+.festive-border {
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(90deg, var(--rojo), #ffffff, var(--azul)) border-box;
+  border: 3px solid transparent;
+  border-radius: 1.25rem;
+}
+
+
