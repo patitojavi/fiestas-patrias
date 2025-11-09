@@ -3,6 +3,7 @@ import Countdown from "./components/Countdown";
 import FoodGallery from "./components/FoodGallery";
 import NavBar from "./components/NavBar";
 import AdUnit from "./components/AdUnit";
+import { ADSENSE_SLOTS } from "./config/adsense";
 
 export default function App() {
   const year = new Date().getFullYear();
@@ -29,7 +30,7 @@ export default function App() {
         <section className="festive-border bg-white/90 backdrop-blur p-6 md:p-10 card-hover">
           <Countdown />
         </section>
-        <AdUnit slot="1234567890" format="auto" />
+        <AdUnit slot={ADSENSE_SLOTS.heroBanner} format="auto" />
 
         {/* SOBRE EL 18 */}
         <section
@@ -76,7 +77,11 @@ export default function App() {
             </li>
           </ul>
         </section>
-        <AdUnit slot="9876543210" format="fluid" layout="in-article" />
+          <AdUnit
+          slot={ADSENSE_SLOTS.inArticle}
+          format="fluid"
+          layout="in-article"
+        />
 
         {/* GASTRONOMÍA + GALERÍA (UNIFICADAS) */}
         <section

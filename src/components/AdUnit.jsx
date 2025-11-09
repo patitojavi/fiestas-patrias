@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
+import { ADSENSE_CLIENT } from "../config/adsense";
 
 /**
  * AdSense <ins> wrapper para React.
  * Props:
- * - slot: string (requerido) -> tu data-ad-slot
+ * - slot: string (requerido) -> tu data-ad-slot (ID del bloque de anuncio)
  * - format: "auto" | "fluid" (por defecto "auto")
  * - layout: e.g. "in-article" (solo cuando format="fluid")
  * - className: clases adicionales de Tailwind
@@ -19,22 +20,56 @@ export default function AdUnit({
   const ref = useRef(null);
 
   useEffect(() => {
-    // Evita múltiples push en el mismo <ins>
     const el = ref.current;
-    if (!el) return;
-    // Si AdSense ya marcó el elemento, no reenviar
+    if (!el || !slot) return;
+
+
     if (el.getAttribute("data-adsbygoogle-status")) return;
 
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      // Silencioso: en local o con AdBlock es normal
-      // console.debug("AdSense push error:", e);
+    const pushAd = () => {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+
+      }
+    };
+
+    const script = document.querySelector(
+      'script[src*="pagead/js/adsbygoogle.js"]'
+    );
+
+    const alreadyLoaded = Boolean(window.adsbygoogle?.loaded);
+
+    if (script) {
+      if (alreadyLoaded) {
+        script.dataset.loaded = "true";
+        pushAd();
+      } else if (script.dataset.loaded !== "true") {
+        const onLoad = () => {
+          script.dataset.loaded = "true";
+          pushAd();
+        };
+        script.addEventListener("load", onLoad, { once: true });
+        return () => script.removeEventListener("load", onLoad);
+      }
+    } else {
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(
+        ADSENSE_CLIENT
+      )}`;
+      s.crossOrigin = "anonymous";
+      s.onload = pushAd;
+      document.head.appendChild(s);
     }
-  }, []);
+
+
+    if (alreadyLoaded) pushAd();
+  }, [slot, format, layout]);
 
   return (
-    <div className={`my-6`}>
+    <div className="my-6">
       {showLabel && (
         <div className="text-xs uppercase tracking-wider font-semibold text-blue-900 mb-2">
           Publicidad
@@ -42,21 +77,32 @@ export default function AdUnit({
       )}
 
       <div className={`festive-border bg-white/90 p-2 ${className}`}>
+        {!slot && (
+          <div className="text-xs text-red-700 mb-2">
+            Configura tu <code>data-ad-slot</code> en{" "}
+            <code>src/config/adsense.js</code> o mediante variables de entorno Vite.
+          </div>
+        )}
+
         <ins
           ref={ref}
           className="adsbygoogle block mx-auto"
-          style={{ display: "block", textAlign: "center", minHeight: 90 }}
-          data-ad-client="ca-pub-9095927872658525"    /* <-- tu ca-pub */
-          data-ad-slot={slot}                         /* <-- tu slot numérico */
-          data-ad-format={format}
+          style={{
+            display: "block",
+            textAlign: "center",
+
+            minHeight: format === "fluid" ? 140 : 90,
+          }}
+          data-ad-client={ADSENSE_CLIENT}      
+          data-ad-slot={String(slot || "")}     
+          data-ad-format={format}              
           data-full-width-responsive="true"
           {...(format === "fluid" && layout
-            ? { "data-ad-layout": layout }
+            ? { "data-ad-layout": layout }   
             : {})}
         />
       </div>
 
-      {/* Fallback mínimo por si hay AdBlock o aún no aprueban */}
       <noscript>
         <div className="text-sm text-blue-900/80">
           Activa JavaScript para ver anuncios.
