@@ -46,7 +46,7 @@ export default function AdUnit({
           ref={ref}
           className="adsbygoogle block mx-auto"
           style={{ display: "block", textAlign: "center", minHeight: 90 }}
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"    /* <-- tu ca-pub */
+          data-ad-client="ca-pub-9095927872658525"    /* <-- tu ca-pub */
           data-ad-slot={slot}                         /* <-- tu slot numérico */
           data-ad-format={format}
           data-full-width-responsive="true"
