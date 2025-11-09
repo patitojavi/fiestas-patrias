@@ -77,11 +77,7 @@ export default function AdUnit({
       )}
 
       <div className={`festive-border bg-white/90 p-2 ${className}`}>
-        {!slot && (
-          <div className="text-xs text-red-700 mb-2">
-            Configura tu <code>data-ad-slot</code> en{" "}
-            <code>src/config/adsense.js</code> o mediante variables de entorno Vite.
-          </div>
+        {!slot && (a
         )}
 
         <ins
