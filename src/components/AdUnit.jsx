@@ -77,7 +77,7 @@ export default function AdUnit({
       )}
 
       <div className={`festive-border bg-white/90 p-2 ${className}`}>
-        {!slot && (a
+        {!slot && (
         )}
 
         <ins
