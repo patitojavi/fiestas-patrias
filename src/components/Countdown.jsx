@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 function getNextSept18(now = new Date()) {
   const y = now.getFullYear();
-  const targetThisYear = new Date(y, 8, 18); // 0=Ene ... 8=Sept
+  const targetThisYear = new Date(y, 8, 18); 
   targetThisYear.setHours(0, 0, 0, 0);
   if (now <= targetThisYear) return targetThisYear;
 
@@ -22,7 +22,7 @@ function diffParts(now, target) {
   const minutes = Math.floor((ms % hourMS) / minMS);
   const seconds = Math.floor((ms % minMS) / 1000);
 
-  const totalDays = Math.ceil(ms / dayMS); // días totales redondeando hacia arriba
+  const totalDays = Math.ceil(ms / dayMS);
   return { totalDays, days, hours, minutes, seconds };
 }
 
@@ -46,7 +46,7 @@ export default function Countdown() {
 
   const { totalDays, days, hours, minutes, seconds } = parts;
 
-  // ¿Es hoy?
+
   const isToday =
     new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() ===
     new Date(target.getFullYear(), target.getMonth(), target.getDate()).getTime();

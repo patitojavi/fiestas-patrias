@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
-  // Cierra el menú al cambiar de tamaño a desktop
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
@@ -20,7 +19,7 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-blue-900/70 border-b border-blue-800">
-      {/* Barra superior */}
+
       <nav
         className="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between"
         aria-label="Principal"
@@ -31,8 +30,6 @@ export default function NavBar() {
         >
           Fiestas Patrias
         </Link>
-
-        {/* Botón hamburguesa (solo mobile) */}
         <button
           type="button"
           className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-white/90 hover:bg-white/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
@@ -41,7 +38,6 @@ export default function NavBar() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Abrir menú</span>
-          {/* Icono hamburguesa / cerrar */}
           {!open ? (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -55,7 +51,6 @@ export default function NavBar() {
           )}
         </button>
 
-        {/* Links desktop */}
         <div className="hidden md:flex gap-2">
           <NavLink to="/" className={active} end>Inicio</NavLink>
           <NavLink to="/sobre" className={active}>Sobre</NavLink>
@@ -67,7 +62,6 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {/* Menú móvil desplegable */}
       <div
         id="mobile-menu"
         className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${
