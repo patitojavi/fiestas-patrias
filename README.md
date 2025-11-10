@@ -1,16 +1,62 @@
-# React + Vite
+# ¿Cuánto Falta Para El 18 De Septiembre? 🇨🇱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido/a! Esta página te muestra la cuenta regresiva exacta para el 18 de septiembre, el gran día de las Fiestas Patrias en Chile. Descubre historia, tradiciones y gastronomía típicas de nuestras celebraciones.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎉 Propósito
 
-## React Compiler
+- Cuenta regresiva en tiempo real hasta el 18 de septiembre.
+- Resumen histórico y cultural de la fecha.
+- Tradiciones, juegos y comida chilena típica.
+- Preguntas frecuentes y política de privacidad.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Contador en tiempo real**.
+- **Historia y significado** del 18.
+- **Tradiciones**: cueca, ramadas, juegos típicos, asados.
+- **Gastronomía**: empanadas, anticuchos, mote con huesillos, choripán.
+- **FAQ y contacto**.
+
+---
+
+## 🥳 ¿Qué celebramos el 18 de septiembre?
+
+El 18 de septiembre conmemora la Primera Junta Nacional de Gobierno de Chile (1810), inicio de nuestra independencia. Es la semana más esperada: ¡cueca, fondas y comida típica!
+
+---
+
+## 🍽️ Principales comidas típicas
+
+- Empanada de pino
+- Anticuchos
+- Mote con huesillos
+- Choripán
+
+---
+
+## 📜 Créditos y fuentes
+
+- Biblioteca Nacional de Chile
+- Recetarios y compilaciones gastronómicas tradicionales
+- Sitios oficiales de las municipalidades
+
+---
+
+## 👤 Desarrollador
+
+Hecho con cariño por [@potitojavii](https://www.instagram.com/potitojavii/).
+
+---
+
+## 📬 Contacto y sugerencias
+
+¿Sugerencias o problemas? 
+- [GitHub: patitojavi](https://github.com/patitojavi)
+- [Instagram: @potitojavii](https://www.instagram.com/potitojavii/)
+
+---
+
