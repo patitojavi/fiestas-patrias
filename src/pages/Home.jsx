@@ -1,7 +1,7 @@
 import Flag from "../components/Flag";
 import Countdown from "../components/Countdown";
-import AdUnit from "../components/AdUnit";
-import { ADSENSE_SLOTS } from "../config/adsense";
+
+
 
 export default function Home() {
   return (
@@ -23,7 +23,6 @@ export default function Home() {
         <Countdown />
       </section>
 
-      <AdUnit slot={ADSENSE_SLOTS.heroBanner} format="auto" className="mt-6" />
     </>
   );
 }
